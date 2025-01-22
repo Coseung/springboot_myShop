@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상세 정보</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+<div th:replace = "~{nav.html::Navbar}"></div>
+<div class="detail">
+        <form action="/orderme" method="post">
+            <h4>주문이 맞나요?</h4>
+            <img src="https://placehold.co/300">
+            <h4 th:text ="${title}">금도금 바지</h4>
+            <input type="text" name="title" th:value="${title}" style="display: none">
+            <p th:text ="${price + ' 원'} ">7억</p>
+            <input type="text" name="price" th:value="${price}" style="display: none">
+            <p th:text ="${'상품 아이디 => '+ id} "></p>
+            <p th:text ="${'유저이름 => ' +user} "></p>
+            <p th:text ="${'유저 아이디 => '+userid} "></p>
+            <input type="text" name="userid" th:value="${userid}" style="display: none">
+            <label for="count">상품 수량</label>
+            <input type="text" id="count" name="count">
+            <div>
+            <button type="submit"> 상품 주문 </button>
+            </div>
+        </form>
+</div>
+
+
+
+
+<!--    <div>-->
+<!--        <h2>댓글</h2>-->
+<!--&lt;!&ndash;        <p th:text="${comment}"></p>&ndash;&gt;-->
+<!--        <div th:each ="i : ${comment}">-->
+<!--            <h4 th:text="${i.username}"></h4>-->
+<!--            <p th:text="${i.content}"></p>-->
+<!--        </div>-->
+<!--    </div>-->
+
+</body>
+</html>

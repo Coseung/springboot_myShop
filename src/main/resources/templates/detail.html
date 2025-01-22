@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상세 정보</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <div th:replace = "~{nav.html::Navbar}"></div>
+    <div class="detail">
+        <h4>상세페이지</h4>
+        <img src="https://placehold.co/300">
+        <h4 th:text ="${title}">금도금 바지</h4>
+        <p th:text ="${price + ' 원'} ">7억</p>
+    </div>
+    <div sec:authorize = "isAuthenticated()">
+        <button type="button" id="order" >
+            <a th:href="@{'/orderpage/'+${id}}">상품 주문</a>
+
+        </button><br><br><br>
+
+
+        <form action="/Commentadd" method="post">
+            <label for="username" style="font-size: large; font-weight: bold"> 이름 </label>
+            <p sec:authentication ="principal.username"></p>
+            <input type="text" id="username" name="username" th:value="${#authentication.name}" style="display: none">
+            <label for="comment" style="font-size: large; font-weight: bold"> 댓글 달기 </label>
+            <input type="text" id="comment" name="comment" >
+            <input type="text" id="id" name="id" th:value="${id}" style="display: none">
+            <button type ="submit"> 댓글 전송 </button>
+        </form>
+    </div>
+
+
+    <div>
+        <h2>댓글</h2>
+        <!-- 댓글이 null 또는 비어 있지 않을 때만 표시 -->
+        <div th:if="${comment != null and !#lists.isEmpty(comment)}" th:each="i : ${comment}">
+            <h4 th:text="${i.username}"></h4>
+            <p th:text="${i.content}"></p>
+        </div>
+    </div>
+
+<!--    <div>-->
+<!--        <h2>댓글</h2>-->
+<!--&lt;!&ndash;        <p th:text="${comment}"></p>&ndash;&gt;-->
+<!--        <div th:each ="i : ${comment}">-->
+<!--            <h4 th:text="${i.username}"></h4>-->
+<!--            <p th:text="${i.content}"></p>-->
+<!--        </div>-->
+<!--    </div>-->
+
+</body>
+</html>

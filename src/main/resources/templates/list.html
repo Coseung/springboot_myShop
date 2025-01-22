@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상품 목록</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <div th:replace ="~{nav.html::Navbar}"></div>
+    <form action="/search" method="POST">
+        <input name="searchtext" style="display:inline">
+        <button type="submit">검색</button>
+    </form>
+
+<div class="product-container">
+    <div class="card" th:each =" i : ${items}">
+        <img th:src="${i.image != null ? i.image : 'https://placehold.co/300' }">
+        <div>
+            <h4 th:text ="${i.title}" >바지</h4>
+            <a th:href ="@{'/retext/'+ ${i.getId}}">수정</a>
+            <br><br>
+            <a th:href="@{'/detail/' + ${i.getId}}">상세</a>
+            <p th:text ="${i.price}">7억</p>
+            <div>
+                <button  type ="button" th:onclick="fetch('/item?id=[[${i.id}]]', {
+            method :'DELETE'})
+            .then(r =>r.text())
+            .then(()=>{
+            location.reload();
+            })"> 상품 삭제 </button>
+            </div>
+
+        </div>
+
+
+
+    </div>
+    <div class="pagebutton" >
+        <span th:each ="i : ${#numbers.sequence(1,pages)}">
+            <button >
+                <a th:href="@{'/list/page/' +${i} }" th:text = "${i}"></a>
+            </button>
+        </span>
+    </div>
+
+
+
+</div>
+</body>
+</html>

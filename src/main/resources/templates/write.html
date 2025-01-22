@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상품 목록</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+<div th:replace ='~{nav.html::Navbar}'></div>
+<h4>상품 등록</h4>
+<form action="/add" method="POST">
+    <label for="title">이름 입력</label>
+    <input id="title" name = "title">
+    <label for="price">가격 입력</label>
+    <input id="price" name = "price">
+    <input type="text" name="imageUrl" value="" id="imageUrl">
+    <button type ="submit">전송</button>
+</form>
+<input type="file" onchange="getURL(this)">
+
+<img src="" style="width: 150px; height: 150px">
+
+<script>
+    async function getURL(e){
+        let name = encodeURIComponent(e.files[0].name)
+        let result = await fetch('/presigned-url?filename=' +name)
+        result = await result.text()
+
+        let result1 = await fetch(result,{
+            method: 'PUT',
+            body: e.files[0]
+        })
+        console.log(result1)
+        console.log(result)
+        console.log(result.split("?")[0])
+
+        if(result1.ok) {
+            document.querySelector('#imageUrl').value = result.split("?")[0];
+            console.log(result.split("?")[0])
+        }
+    }
+
+</script>
+</body>
+</html>

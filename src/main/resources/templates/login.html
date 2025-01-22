@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상품 목록</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+<div th:replace ='~{nav.html::Navbar}'></div>
+<h4>로그인하세요</h4>
+<form action="/login" method="POST">
+    <input name = "username">
+    <input name = "password" type="password">
+    <button type ="submit">로그인</button>
+</form>
+</body>
+</html>

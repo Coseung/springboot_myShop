@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상품 목록</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+<div th:replace ='~{nav.html::Navbar}'></div>
+<h4>마이페이지입니다</h4>
+
+<div>
+    <span sec:authentication ="principal.username"></span>
+    <span>입니다</span>
+</div>
+</body>
+</html>
