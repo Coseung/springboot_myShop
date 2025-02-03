@@ -39,5 +39,12 @@
 ![Image](https://github.com/user-attachments/assets/fe6c6ed3-f059-4ed4-bb70-c02b97017c84)
 
 
-## 회원만 가능한 댓글 작성
+## 회원만 가능한 댓글 기능
 ![Image](https://github.com/user-attachments/assets/2ab646c1-44d6-4532-9fa1-931c50869ccb)
+
+## 회원 댓글 달기 
+![Image](https://github.com/user-attachments/assets/f8d334da-983e-476f-9bc4-59e44f867341)
+
+## auth정보 가져오는 마이페이지 간단구현
+
+![Image](https://github.com/user-attachments/assets/4dd38594-2f4c-46fa-908f-c60def3bfbf2)
