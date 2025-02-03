@@ -26,4 +26,18 @@
 ![Image](https://github.com/user-attachments/assets/23fd4ba6-3ff9-4e0a-a9d8-267040fe3a85)
 
 
-##2
+##2로그인
+![Image](https://github.com/user-attachments/assets/13cb0444-4b2a-4b88-b193-69c2cc7416d9)
+
+##회원가입
+![Image](https://github.com/user-attachments/assets/78cb6e57-2674-4382-b11e-811ec04f898a)
+
+
+##상품 등록 (AWS S3 업로드)
+![Image](https://github.com/user-attachments/assets/98735b9e-75a6-45f6-859a-2b83d71887a7)
+
+![Image](https://github.com/user-attachments/assets/fe6c6ed3-f059-4ed4-bb70-c02b97017c84)
+
+
+##회원만 가능한 댓글 작성
+![Image](https://github.com/user-attachments/assets/2ab646c1-44d6-4532-9fa1-931c50869ccb)
